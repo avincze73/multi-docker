@@ -9,8 +9,12 @@ script:
   - docker run avincze73/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t avincze73/multi-client ./client
-  - docker build -t avincze73/multi-nginx ./nginx
-  - docker build -t avincze73/multi-server ./server
-  - docker build -t avincze73/multi-worker ./worker
-  - 
+  - docker build -t avincze73/complex-client ./client
+  - docker build -t avincze73/complex-nginx ./nginx
+  - docker build -t avincze73/complex-server ./server
+  - docker build -t avincze73/complex-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push avincze73/complex-client
+  - docker push avincze73/complex-nginx
+  - docker push avincze73/complex-server
+  - docker push avincze73/complex-worker

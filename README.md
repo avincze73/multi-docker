@@ -1,7 +1,12 @@
 # How to install the complex application with docker compose?
-From complex3 directory use the following commands.
+From complex directory use the following commands.
 ```bash
-docker system prune -a
-docker volume prune
-docker-compose up --build
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin https://github.com/avincze73/multi-docker.git
+git remote -v
+git push origin master
+git status
+
 ```
