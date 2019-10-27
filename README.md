@@ -8,5 +8,5 @@ git remote add origin https://github.com/avincze73/multi-docker.git
 git remote -v
 git push origin master
 git status
-
+git push origin master
 ```
